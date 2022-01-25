@@ -9,7 +9,6 @@ export default {};
 <style lang="scss" scoped>
 .container {
   background-color: #222e44;
-  display: flex;
   height: 6.25rem;
 }
 </style>
