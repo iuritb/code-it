@@ -9,7 +9,8 @@
 </template>
 
 <script>
-export default {};
+export default {
+};
 </script>
 
 <style lang="scss" scoped>
@@ -21,10 +22,18 @@ export default {};
   height: 3.12rem;
   &__content {
     color: #333333;
-    margin: 1.5rem 0.5rem 1.5rem 0.5rem;
+    margin: 1.5rem 2em 1.5rem 2rem;
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
+  }
+  &__content-item {
+    margin: 5px;
+    cursor: pointer;
+  }
+  &__content-item:hover {
+    color: #1DBAD3;
+    margin: 5px;
     cursor: pointer;
   }
 }
