@@ -1,13 +1,15 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <SideBar />
+  <NavBar />
+  <BreadCrumb />
 </template>
+
+<script setup>
+//Layout components
+import NavBar from "./components/layout/NavBar.vue";
+import SideBar from "./components/layout/SideBar.vue";
+import BreadCrumb from "./components/layout/BreadCrumb.vue";
+</script>
 
 <style>
 #app {
