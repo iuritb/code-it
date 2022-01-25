@@ -6,6 +6,12 @@
     <NavBar class="container__navbar" />
     <BreadCrumb class="container__breadcrumb" />
   </div>
+
+  <router-link to="/Courses">Go to Cursos</router-link>/
+  <router-link to="/Modules">Go to Modulos</router-link>/
+  <router-link to="/Classes">Go to Aulas</router-link>/
+
+  <router-view></router-view>
 </template>
 
 <script setup>
@@ -23,5 +29,9 @@ import BreadCrumb from "./components/layout/BreadCrumb.vue";
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+* {
+  margin: 0;
+  padding: 0;
 }
 </style>
