@@ -1,5 +1,15 @@
 <template>
-  <div>
-    <h1> sidebar </h1>
-  </div>
+  <aside class="container"></aside>
 </template>
+
+<script>
+export default {};
+</script>
+
+<style lang="scss" scoped>
+.container {
+  background-color: #222e44;
+  display: flex;
+  height: 6.25rem;
+}
+</style>
