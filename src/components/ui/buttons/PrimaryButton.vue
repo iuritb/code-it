@@ -12,7 +12,7 @@ export default {
 
 <style lang="scss">
 .primary-button {
-  margin: 3rem;
+  padding: 0.5rem 5rem 0.5rem 5rem;
   background-color: #1dbad3;
   color: #fff;
   font-size: 18px;
