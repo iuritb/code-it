@@ -3,7 +3,11 @@
     <div class="course-card__text">
       <img class="course-card__logo" :src="loadAsset(logo)" alt="" />
       <div class="course-card__content">
-        <span class="course-card__text-title">{{ title }}</span>
+        <span
+          @click="redirect(`/course/${courseId}`)"
+          class="course-card__text-title"
+          >{{ title }}</span
+        >
         <span class="course-card__text-description">{{ description }}</span>
       </div>
     </div>
@@ -19,27 +23,20 @@
       <div class="course-card__action-section">
         <span class="course-card__action-edit">
           <img
-            class="course-card__action-trash-icon"
+            @click="editCourse(courseId)"
             src="../../../assets/icons/pencil-square.svg"
             alt="chevron-right icon"
           />
         </span>
         <span class="course-card__action-delete">
           <img
-            class="course-card__action-trash-icon"
+            @click="deleteCourse(courseId)"
             src="../../../assets/icons/trash.svg"
             alt="chevron-right icon"
           />
         </span>
       </div>
     </div>
-    <!-- <pre>
-      {{ logo }}
-      {{ title }}
-      {{ description }}
-      {{ isActive }}
-
-    </pre> -->
   </div>
 </template>
 
@@ -51,6 +48,9 @@ import IsInactive from "../tags/IsInactive.vue";
 export default {
   components: { IsActive, IsInactive },
   props: {
+    courseId: {
+      type: String,
+    },
     logo: {
       type: String,
       default: "Não informado",
@@ -75,7 +75,14 @@ export default {
       return modules[path].default;
     },
     redirect(path) {
+      console.log(path);
       this.$router.push(`${path}`);
+    },
+    editCourse(item) {
+      console.log("edit course", item);
+    },
+    deleteCourse(item) {
+      console.log("delete course", item);
     },
   },
 };
@@ -109,6 +116,10 @@ export default {
     font-weight: 600;
     font-size: 18px;
     line-height: 25px;
+    cursor: pointer;
+  }
+  &__text-title:hover {
+    color: #1dbad3;
   }
   &__text-description {
     font-weight: 400;
@@ -124,5 +135,14 @@ export default {
     display: flex;
     justify-content: space-between;
   }
+  &__action-edit {
+    cursor: pointer;
+  }
+  &__action-delete {
+    cursor: pointer;
+  }
+}
+.course-card:hover {
+  box-shadow: 0px 1px 10px 2px rgba(0.15, 0.15, 0.15, 0.3);
 }
 </style>

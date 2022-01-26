@@ -10,6 +10,7 @@
       <template v-for="(course, index) in courses" :key="index">
         <CardCourse
           class="course__content-card"
+          :courseId="course.courseId"
           :logo="course.logo"
           :title="course.title"
           :description="course.description"
@@ -33,12 +34,14 @@ export default {
     return {
       courses: [
         {
+          courseId: "001",
           title: "Curso de Svelte",
           description: "Um curso para introdução ao Svelte com ...",
           logo: "svelte-logo.svg",
           isActive: true,
         },
         {
+          courseId: "002",
           title: "Curso de React",
           description: "Como Criar aplicativos utilizando React ...",
           logo: "react-logo.svg",
@@ -49,9 +52,10 @@ export default {
     };
   },
   methods: {
-    newCourse(path) {
-      this.$router.push(`/${path}`);
+    newCourse() {
+      console.log("novo curso");
     },
+    
   },
 };
 </script>
