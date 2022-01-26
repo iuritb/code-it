@@ -2,8 +2,10 @@
   <div class="course-card">
     <div class="course-card__text">
       <img class="course-card__logo" :src="loadAsset(logo)" alt="" />
-      <span class="course-card__text-title">{{ title }}</span>
-      <span class="course-card__text-description">{{ description }}</span>
+      <div class="course-card__content">
+        <span class="course-card__text-title">{{ title }}</span>
+        <span class="course-card__text-description">{{ description }}</span>
+      </div>
     </div>
     <div class="course-card__action">
       <span class="course-card__action-tag">
@@ -67,12 +69,10 @@ export default {
     },
   },
   methods: {
-    loadAsset(path) {
-      let url = new URL(`../../../../assets/logos/${path}.svg`, import.meta.url)
-        .href;
-      let urlImg = url.toString();
-      console.log(urlImg);
-      return urlImg;
+    loadAsset(name) {
+      const path = `../../../assets/logos/${name}`;
+      const modules = import.meta.globEager("../../../assets/logos/*.svg");
+      return modules[path].default;
     },
     redirect(path) {
       this.$router.push(`${path}`);
@@ -88,13 +88,39 @@ export default {
   background: #f5f9f9;
   box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
+  flex-direction: row;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__content {
+    margin: 0 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__text-title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  &__text-description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  &__action-tag {
+    margin: 0 0 0 10rem;
+  }
 
   &__action-section {
-    margin: 0.5rem 1em 0.5rem 1rem;
+    margin: 0.8rem 1em 0.5rem 1rem;
     display: flex;
     justify-content: space-between;
   }
