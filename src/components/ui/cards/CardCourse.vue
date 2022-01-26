@@ -7,13 +7,18 @@
     </div>
     <div class="course_card__action">
       <span class="course_card__action-tag"></span>
-      <span class="course_card__action-edit"></span>
-      <span class="course_card__action-delete"></span>
+      <div class="course_card__action-section">
+        <span class="course_card__action-edit">
+          <i></i>
+        </span>
+        <span class="course_card__action-delete"></span>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
   props: {
     logo: {
@@ -35,7 +40,7 @@ export default {
   },
   methods: {
     loadAsset(path) {
-      return require(`../../../../public/logos/${path}`);
+     return 
     },
     redirect(path) {
       this.$router.push(`${path}`);
@@ -47,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 .course-card {
   width: 100%;
-  
+
   height: 6.25rem;
   background: #f5f9f9;
   box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, 0.15);

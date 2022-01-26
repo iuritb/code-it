@@ -2,15 +2,14 @@
   <nav class="breadcrumb">
     <div class="breadcrumb__content">
       <span class="breadcrumb__content-item">Home</span>
-      <span class="breadcrumb__content-item"> > </span>
+      <img class="breadcrumb__content-icon" src="../../assets/icons/chevron-right.svg" alt="chevron-right icon">
       <span class="breadcrumb__content-item">Treinamento</span>
     </div>
   </nav>
 </template>
 
 <script>
-export default {
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>
@@ -32,7 +31,7 @@ export default {
     cursor: pointer;
   }
   &__content-item:hover {
-    color: #1DBAD3;
+    color: #1dbad3;
     margin: 5px;
     cursor: pointer;
   }
