@@ -11,7 +11,7 @@
         <CardCourse
           class="course__content-card"
           :logo="course.logo"
-          :title="course.description"
+          :title="course.title"
           :description="course.description"
           :isActive="course.isActive"
         />
@@ -35,13 +35,13 @@ export default {
         {
           title: "Curso de Svelte",
           description: "Um curso para introdução ao Svelte com ...",
-          logo: "svelte.svg",
+          logo: "svelte-logo.svg",
           isActive: true,
         },
         {
           title: "Curso de React",
           description: "Como Criar aplicativos utilizando React ...",
-          logo: "react.svg",
+          logo: "react-logo.svg",
           isActive: false,
         },
       ],

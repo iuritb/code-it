@@ -10,7 +10,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .primary-button {
   padding: 0.5rem 5rem 0.5rem 5rem;
   background-color: #1dbad3;
