@@ -45,6 +45,7 @@
 import IsActive from "../tags/IsActive.vue";
 import IsInactive from "../tags/IsInactive.vue";
 
+
 export default {
   components: { IsActive, IsInactive },
   props: {
@@ -90,10 +91,10 @@ export default {
 
 <style lang="scss" scoped>
 .course-card {
-  width: 100%;
-  height: 6.25rem;
   background: #f5f9f9;
   box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: 6.25rem;
   border-radius: 10px;
   flex-direction: row;
 

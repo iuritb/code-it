@@ -4,7 +4,7 @@
       <p class="course__content-p">Seus treinamentos</p>
       <PrimaryButton
         class="course__content-button"
-        @click="newCourse('classes')"
+        @click="newCourse()"
         :label="'Novo Treinamento'"
       />
       <template v-for="(course, index) in courses" :key="index">
@@ -25,6 +25,7 @@
 //UI Components
 import PrimaryButton from "../components/ui/buttons/PrimaryButton.vue";
 import CardCourse from "../components/ui/cards/CardCourse.vue";
+
 export default {
   components: {
     PrimaryButton,
@@ -54,8 +55,8 @@ export default {
   methods: {
     newCourse() {
       console.log("novo curso");
+      this.$emit("togglenav");
     },
-    
   },
 };
 </script>

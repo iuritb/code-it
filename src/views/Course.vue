@@ -1,12 +1,17 @@
 <template>
   <div class="course">
-    <h1>tela de curso</h1>
+    <Tabs />
   </div>
 </template>
 
 <script>
 //UI Components
-export default {};
+import Tabs from '../components/ui/Tab.vue'
+export default {
+  components: {
+    Tabs
+  }
+};
 </script>
 
 <style lang="scss" scoped>
