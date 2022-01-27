@@ -14,6 +14,19 @@
         />
       </template>
     </div>
+    <div class="dawer__new-course-header">
+      <span>
+        <img
+          @click="toggle"
+          src="../../../assets/icons/close.svg"
+          alt="close icon"
+        />
+      </span>
+      <p>Novo Treinamento</p>
+      <span>
+        <img src="../../../assets/icons/question.svg" alt="question icon" />
+      </span>
+    </div>
   </div>
 </template>
 
@@ -21,13 +34,13 @@
 //UI Components
 import PrimaryButton from "../components/ui/buttons/PrimaryButton.vue";
 import CardCourse from "../components/ui/cards/CardCourse.vue";
-import NewCourse from "../components/ui/sidebar/NewCourse.vue"
+import NewCourse from "../components/ui/sidebar/NewCourse.vue";
 
 export default {
   components: {
     PrimaryButton,
     CardCourse,
-    NewCourse
+    NewCourse,
   },
   data() {
     return {
@@ -50,16 +63,16 @@ export default {
       label: "teste",
     };
   },
-  methods: {
-    newCourse() {
-      console.log("novo curso");
-      this.$emit("togglenav");
-    },
-  },
 };
 </script>
 
 <style lang="scss" scoped>
+.dawer__new-course-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 .course {
   margin: 0.5rem 5rem 0.5rem 5rem;
 
@@ -71,6 +84,7 @@ export default {
     flex-wrap: wrap;
   }
   &__content-p {
+    margin: 2rem;
     color: #000000;
     text-transform: uppercase;
     font-weight: 600;

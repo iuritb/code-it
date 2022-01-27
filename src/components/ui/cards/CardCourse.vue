@@ -6,8 +6,9 @@
         <span
           @click="redirect(`/course/${courseId}`)"
           class="course-card__text-title"
-          >{{ title }}</span
-        >
+          >
+          {{ title }}
+          </span>
         <span class="course-card__text-description">{{ description }}</span>
       </div>
     </div>
