@@ -7,10 +7,6 @@
     <BreadCrumb class="container__breadcrumb" />
   </div>
 
-  <router-link to="/">Go to Cursos</router-link>/
-  <router-link to="/modules">Go to Modulos</router-link>/
-  <router-link to="/classes">Go to Aulas</router-link>/
-
   <router-view></router-view>
 </template>
 

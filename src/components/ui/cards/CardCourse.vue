@@ -22,11 +22,18 @@
       </span>
       <div class="course-card__action-section">
         <span class="course-card__action-edit">
-          <img
+          <EditCourse
+            :courseId="courseId"
+            :logo="logo"
+            :title="title"
+            :description="description"
+            :isActive="isActive"
+          />
+          <!-- <img
             @click="editCourse(courseId)"
             src="../../../assets/icons/pencil-square.svg"
             alt="chevron-right icon"
-          />
+          /> -->
         </span>
         <span class="course-card__action-delete">
           <img
@@ -44,10 +51,10 @@
 //Components
 import IsActive from "../tags/IsActive.vue";
 import IsInactive from "../tags/IsInactive.vue";
-
+import EditCourse from "../sidebar/EditCourse.vue";
 
 export default {
-  components: { IsActive, IsInactive },
+  components: { IsActive, IsInactive, EditCourse },
   props: {
     courseId: {
       type: String,

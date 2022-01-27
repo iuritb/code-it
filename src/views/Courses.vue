@@ -2,11 +2,7 @@
   <div class="course">
     <div class="course__content">
       <p class="course__content-p">Seus treinamentos</p>
-      <PrimaryButton
-        class="course__content-button"
-        @click="newCourse()"
-        :label="'Novo Treinamento'"
-      />
+      <NewCourse />
       <template v-for="(course, index) in courses" :key="index">
         <CardCourse
           class="course__content-card"
@@ -25,11 +21,13 @@
 //UI Components
 import PrimaryButton from "../components/ui/buttons/PrimaryButton.vue";
 import CardCourse from "../components/ui/cards/CardCourse.vue";
+import NewCourse from "../components/ui/sidebar/NewCourse.vue"
 
 export default {
   components: {
     PrimaryButton,
     CardCourse,
+    NewCourse
   },
   data() {
     return {
