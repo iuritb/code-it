@@ -14,19 +14,6 @@
         />
       </template>
     </div>
-    <div class="dawer__new-course-header">
-      <span>
-        <img
-          @click="toggle"
-          src="../../../assets/icons/close.svg"
-          alt="close icon"
-        />
-      </span>
-      <p>Novo Treinamento</p>
-      <span>
-        <img src="../../../assets/icons/question.svg" alt="question icon" />
-      </span>
-    </div>
   </div>
 </template>
 
@@ -67,15 +54,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.dawer__new-course-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
 .course {
   margin: 0.5rem 5rem 0.5rem 5rem;
-
   &__content {
     display: flex;
     justify-content: space-between;

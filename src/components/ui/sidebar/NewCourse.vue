@@ -1,21 +1,8 @@
 <template>
   <div class="drawer">
     <PrimaryButton @click="toggle" :label="'Novo Treinamento'" />
-    <div class="dawer__new-course-header">
-      <span>
-        <img
-          @click="toggle"
-          src="../../../assets/icons/close.svg"
-          alt="close icon"
-        />
-      </span>
-      <p>Novo Treinamento</p>
-      <span>
-        <img src="../../../assets/icons/question.svg" alt="question icon" />
-      </span>
-    </div>
     <div class="slidein" :class="open ? 'open' : ''">
-      <div class="dawer__new-course-header">
+      <div class="drawer__new-course-header">
         <span>
           <img
             @click="toggle"
@@ -62,7 +49,7 @@ export default {
 
 <style lang="scss" scoped>
 .drawer {
-  v-deep :v-deep(&__new-course-header) {
+  &__new-course-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
