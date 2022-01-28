@@ -1,27 +1,41 @@
 <template>
-  <div class="drawer">
+  <div class="new-course">
     <PrimaryButton @click="toggle" :label="'Novo Treinamento'" />
     <div class="slidein" :class="open ? 'open' : ''">
-      <div class="drawer__new-course-header">
-        <span>
+      <div class="new-course__header">
+        <span class="new-course__header-icon">
           <img
             @click="toggle"
             src="../../../assets/icons/close.svg"
             alt="close icon"
           />
         </span>
-        <p>Novo Treinamento</p>
-        <span>
+        <p class="new-course__header-title">Novo Treinamento</p>
+        <span class="new-course__header-icon">
           <img src="../../../assets/icons/question.svg" alt="question icon" />
         </span>
       </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt cum,
-        harum, quaerat porro, maiores facilis molestias illum impedit quo
-        repellat enim provident perspiciatis molestiae in saepe id cupiditate
-        eveniet asperiores.
-      </p>
-      <button @click="toggle">X</button>
+      <div class="new-course__form">
+        <span class="new-course__form">
+          <img src="../../../assets/icons/input-image.svg" alt="close icon" />
+        </span>
+        <p class="new-course__form-input-title">Nome</p>
+        <input class="new-course__form-input-medium" type="text" />
+        <p class="new-course__form-input-title">Descrição</p>
+        <input class="new-course__form-input-big" type="text" />
+        <p class="new-course__form-input-title">Carga Horária</p>
+        <input class="new-course__form-input-medium" type="text" />
+        <div class="new-course__form-small">
+          <span>
+            <p class="new-course__form-input-title">Ativação do curso</p>
+            <input class="new-course__form-input-small" type="text" />
+          </span>
+          <span>
+            <p class="new-course__form-input-title">Desativação do curso</p>
+            <input class="new-course__form-input-small" type="text" />
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -48,16 +62,73 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.drawer {
-  &__new-course-header {
+.new-course {
+  &__header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
+  &__header-icon {
+    cursor: pointer;
+  }
+  &__header-title {
+    color: #000000;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+  }
+  &__form {
+    margin: 2rem 0 2rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__form-small {
+    margin: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  &__form-input-small {
+    height: 40px;
+    width: 230px;
+    background: #ffffff;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: none;
+  }
+  &__form-input-medium {
+    margin: 1rem;
+    height: 40px;
+    width: 520px;
+    background: #ffffff;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: none;
+  }
+  &__form-input-big {
+    margin: 1rem;
+    height: 200px;
+    width: 520px;
+    background: #ffffff;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: none;
+  }
+  &__form-input-title {
+    font-weight: 400;
+    justify-self: start;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000;
+  }
 }
 .slidein {
-  max-width: 40rem;
+  width: 45rem;
   padding: 2em 3em;
   position: fixed;
   z-index: 100;
