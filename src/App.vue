@@ -2,12 +2,11 @@
   <div>
     <SideBar class="container__sidebar" />
   </div>
-  <div>
+  <div class="container__content">
     <NavBar class="container__navbar" />
     <BreadCrumb class="container__breadcrumb" />
+    <router-view></router-view>
   </div>
-
-  <router-view></router-view>
 </template>
 
 <script setup>
@@ -19,6 +18,9 @@ import BreadCrumb from "./components/layout/BreadCrumb.vue";
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+.container__content {
+  margin: 0 0 0 6.25rem;
+}
 #app {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
