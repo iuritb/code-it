@@ -36,16 +36,20 @@
           </span>
         </div>
       </div>
+      <SuccessButton :label="'Criar'"/>
     </div>
   </div>
 </template>
 
 <script>
+//Components
 import PrimaryButton from "../buttons/PrimaryButton.vue";
+import SuccessButton from "../buttons/SuccessButton.vue";
 
 export default {
   components: {
     PrimaryButton,
+    SuccessButton,
   },
   data() {
     return {
@@ -79,14 +83,14 @@ export default {
     line-height: 30px;
   }
   &__form {
-    margin: 2rem 0 2rem 0;
+    margin: 0.5rem 0 0.5rem 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   &__form-small {
-    margin: 2rem;
+    margin: 0.5rem;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -144,3 +148,5 @@ export default {
   right: 0;
 }
 </style>
+
+

@@ -1,6 +1,5 @@
 <template>
-  <div id="app">
-    <!-- <PrimaryButton  :label="'Novo Treinamento'" /> -->
+  <div class="edit-course">
     <span class="course-card__action-edit">
       <img
         @click="toggle"
@@ -8,34 +7,62 @@
         alt="chevron-right icon"
       />
     </span>
-    <!-- Add open class if state is set to open  -->
     <div class="slidein" :class="open ? 'open' : ''">
-      <h1>Header</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt cum,
-        harum, quaerat porro, maiores facilis molestias illum impedit quo
-        repellat enim provident perspiciatis molestiae in saepe id cupiditate
-        eveniet asperiores.
-      </p>
-      <button class="close-btn" @click="toggle">X</button>
-      <pre>
-      {{ courseId }}
-      {{ logo }}
-      {{ title }}
-      {{ description }}
-      {{ isActive }}
+      <div class="edit-course__header">
+        <span class="edit-course__header-icon">
+          <img
+            @click="toggle"
+            src="../../../assets/icons/close.svg"
+            alt="close icon"
+          />
+        </span>
+        <p class="edit-course__header-title">Editar Treinamento</p>
+        <span class="edit-course__header-icon">
+          <img src="../../../assets/icons/question.svg" alt="question icon" />
+        </span>
+      </div>
+      <div class="edit-course__form">
+        <span class="edit-course__form">
+          <img src="../../../assets/icons/input-image.svg" alt="close icon" />
+        </span>
+        <p class="edit-course__form-input-title">Nome</p>
+        <input class="edit-course__form-input-medium" type="text" />
+        <p class="edit-course__form-input-title">Descrição</p>
+        <input class="edit-course__form-input-big" type="text" />
+        <p class="edit-course__form-input-title">Carga Horária</p>
+        <input class="edit-course__form-input-medium" type="text" />
+        <div class="edit-course__form-small">
+          <span>
+            <p class="edit-course__form-input-title">Ativação do curso</p>
+            <input class="edit-course__form-input-small" type="text" />
+          </span>
+          <span>
+            <p class="edit-course__form-input-title">Desativação do curso</p>
+            <input class="edit-course__form-input-small" type="text" />
+          </span>
+        </div>
+      </div>
+      <SuccessButton :label="'Criar'" />
+      <DangerButton :label="'Desabilitar'" />
 
-    </pre>
     </div>
-    
   </div>
 </template>
 
 <script>
+//Components
 import PrimaryButton from "../buttons/PrimaryButton.vue";
+import SuccessButton from "../buttons/SuccessButton.vue";
+import DangerButton from "../buttons/DangerButton.vue";
+
 
 export default {
-  props: {
+  components: {
+    PrimaryButton,
+    SuccessButton,
+    DangerButton,
+  },
+    props: {
     courseId: {
       type: String,
     },
@@ -56,9 +83,6 @@ export default {
       default: false,
     },
   },
-  components: {
-    PrimaryButton,
-  },
   data() {
     return {
       open: false,
@@ -73,51 +97,86 @@ export default {
 };
 </script>
 
-<style>
-/* Make slide in box hidden off screen with fixed positioning 100% to the right */
+<style lang="scss" scoped>
+.edit-course {
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__header-icon {
+    cursor: pointer;
+  }
+  &__header-title {
+    color: #000000;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+  }
+  &__form {
+    margin: 0.5rem 0 0.5rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__form-small {
+    margin: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  &__form-input-small {
+    height: 40px;
+    width: 230px;
+    background: #ffffff;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: none;
+  }
+  &__form-input-medium {
+    margin: 1rem;
+    height: 40px;
+    width: 520px;
+    background: #ffffff;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: none;
+  }
+  &__form-input-big {
+    margin: 1rem;
+    height: 200px;
+    width: 520px;
+    background: #ffffff;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: none;
+  }
+  &__form-input-title {
+    font-weight: 400;
+    justify-self: start;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000;
+  }
+}
 .slidein {
-  max-width: 38rem;
+  width: 45rem;
   padding: 2em 3em;
   position: fixed;
   z-index: 100;
   top: 0;
   right: -100%;
-  background: #ddd;
+  background: #f9f9f9;
   height: 100%;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
   transition: all 0.5s ease-in-out;
 }
 
-/* Set positioning back to 0 when toggled opened */
 .open {
   right: 0;
-}
-
-/* add a close button in case toggle button is hidden on smaller screens */
-.close-btn {
-  border: none;
-  font-weight: bold;
-  font-size: 2em;
-  background: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0.5em;
-}
-
-/* General styles unrelated to slide in */
-
-.toggle {
-  margin: 1em;
-}
-
-button {
-  padding: 0.5em 1em;
-  border-radius: 3em;
-  font-size: 1.1em;
-}
-
-h1 {
-  font-weight: 200;
 }
 </style>
