@@ -12,7 +12,6 @@ export default {
 
 <style lang="scss" scoped>
 .success-button {
-  padding: 0.5rem 5rem 0.5rem 5rem;
   background-color: #86c51f;
   color: #fff;
   font-size: 18px;
