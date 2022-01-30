@@ -1,24 +1,38 @@
 <template>
   <div class="tab">
     <div class="tab_button">
-      <button class="tab__button-module" >Módulos</button>
-      <button class="tab__button-class">Aulas</button>
+      <button class="tab__button-module" @click="toggle('Modules')">
+        Módulos
+      </button>
+      <button class="tab__button-class" @click="toggle('Classes')">
+        Aulas
+      </button>
+      <div class="tab__divider"></div>
     </div>
-    <div class="tab__divider"></div>
   </div>
 </template>
 
 <script>
-export default {};
+
+export default {
+  methods: {
+    toggle(component) {
+      this.$emit('emit-current-component', component)
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .tab {
-  
+  display: flex;
+  align-items: start;
+  justify-content: start;
   &__button {
     display: flex;
     flex-direction: row;
-
+    align-items: start;
+    justify-content: start;
   }
   &__button-module {
     background: #1dbad3;
@@ -40,7 +54,7 @@ export default {};
   }
   &__divider {
     background: #1dbad3;
-    width: 100%;
+    width: 58.25rem;
     height: 2px;
   }
 }
