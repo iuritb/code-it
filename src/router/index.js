@@ -4,8 +4,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 //View Components
 import Courses from '../views/Courses.vue'
 import Course from '../views/Course.vue'
-import Modules from '../views/Modules.vue'
-import Classes from '../views/Classes.vue'
 
 const routes = [
   {
@@ -18,16 +16,6 @@ const routes = [
     name: 'Course',
     component: Course
   },
-  {
-    path: '/modules/:id',
-    name: 'Modules',
-    component: Modules
-  },
-  {
-    path: '/classes/:id',
-    name: 'Classes',
-    component: Classes
-  }
 
 ]
 
