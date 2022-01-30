@@ -41,10 +41,11 @@
             <input class="edit-course__form-input-small" type="text" />
           </span>
         </div>
+        <div class="edit-course__form-buttons">
+          <SuccessButton :label="'Criar'" />
+          <DangerButton :label="'Desabilitar'" />
+        </div>
       </div>
-      <SuccessButton :label="'Criar'" />
-      <DangerButton :label="'Desabilitar'" />
-
     </div>
   </div>
 </template>
@@ -55,14 +56,13 @@ import PrimaryButton from "../buttons/PrimaryButton.vue";
 import SuccessButton from "../buttons/SuccessButton.vue";
 import DangerButton from "../buttons/DangerButton.vue";
 
-
 export default {
   components: {
     PrimaryButton,
     SuccessButton,
     DangerButton,
   },
-    props: {
+  props: {
     courseId: {
       type: String,
     },
@@ -156,15 +156,24 @@ export default {
     border: none;
   }
   &__form-input-title {
+    display: flex;
+    align-self: flex-start;
     font-weight: 400;
     justify-self: start;
     font-size: 18px;
     line-height: 25px;
     color: #000000;
   }
+  &__form-buttons {
+   display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
 .slidein {
-  width: 45rem;
+  width: 32.5em;
+
   padding: 2em 3em;
   position: fixed;
   z-index: 100;

@@ -35,8 +35,8 @@
             <input class="new-course__form-input-small" type="text" />
           </span>
         </div>
+        <SuccessButton class="new-course__form-button" :label="'Criar'" />
       </div>
-      <SuccessButton :label="'Criar'"/>
     </div>
   </div>
 </template>
@@ -125,14 +125,19 @@ export default {
   }
   &__form-input-title {
     font-weight: 400;
-    justify-self: start;
+    display: flex;
+    align-self: flex-start;
     font-size: 18px;
     line-height: 25px;
     color: #000000;
   }
+  &__form-button{
+    display: flex;
+    align-self: flex-end;
+  }
 }
 .slidein {
-  width: 45rem;
+  width: 32.5em;
   padding: 2em 3em;
   position: fixed;
   z-index: 100;
