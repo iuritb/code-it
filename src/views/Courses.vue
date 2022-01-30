@@ -19,13 +19,11 @@
 
 <script>
 //UI Components
-import PrimaryButton from "../components/ui/buttons/PrimaryButton.vue";
 import CardCourse from "../components/ui/cards/CardCourse.vue";
 import NewCourse from "../components/ui/sidebar/NewCourse.vue";
 
 export default {
   components: {
-    PrimaryButton,
     CardCourse,
     NewCourse,
   },
