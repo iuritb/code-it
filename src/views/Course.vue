@@ -9,17 +9,27 @@
         <NewClass />
       </template>
     </div>
-    <component :is="currentComponent" />
+    <div>
+      <component :is="currentComponent" />
+      <DescriptionCard
+        :logo="course.logo"
+        :title="course.title"
+        :description="course.description"
+        :isActive="course.isActive"
+        :duration="course.duration"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 //UI Components
+import NewClass from "../components/ui/sidebar/NewClass.vue";
+import NewModule from "../components/ui/sidebar/NewModule.vue";
 import Tabs from "../components/ui/Tab.vue";
 import Classes from "./components/Classes.vue";
 import Modules from "./components/Modules.vue";
-import NewClass from "../components/ui/sidebar/NewClass.vue";
-import NewModule from "../components/ui/sidebar/NewModule.vue";
+import DescriptionCard from "../components/ui/cards/CardDescription.vue";
 
 export default {
   components: {
@@ -28,10 +38,19 @@ export default {
     Modules,
     NewClass,
     NewModule,
+    DescriptionCard,
   },
   data() {
     return {
       currentComponent: "Modules",
+      course: {
+        courseId: "001",
+        title: "Curso de Svelte",
+        description: "Um curso para introdução ao Svelte com ...",
+        logo: "svelte-logo.svg",
+        duration: "20h",
+        isActive: true,
+      },
     };
   },
   methods: {

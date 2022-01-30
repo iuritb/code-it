@@ -35,6 +35,7 @@ export default {
           title: "Curso de Svelte",
           description: "Um curso para introdução ao Svelte com ...",
           logo: "svelte-logo.svg",
+          duration: "20h",
           isActive: true,
         },
         {
@@ -42,10 +43,10 @@ export default {
           title: "Curso de React",
           description: "Como Criar aplicativos utilizando React ...",
           logo: "react-logo.svg",
+          duration: "40h",
           isActive: false,
         },
       ],
-      label: "teste",
     };
   },
 };
