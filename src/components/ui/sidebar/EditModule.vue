@@ -29,18 +29,6 @@
         <input class="edit-module__form-input-medium" type="text" />
         <p class="edit-module__form-input-title">Descrição</p>
         <input class="edit-module__form-input-big" type="text" />
-        <p class="edit-module__form-input-title">Carga Horária</p>
-        <input class="edit-module__form-input-medium" type="text" />
-        <div class="edit-module__form-small">
-          <span>
-            <p class="edit-module__form-input-title">Ativação do curso</p>
-            <input class="edit-module__form-input-small" type="text" />
-          </span>
-          <span>
-            <p class="edit-module__form-input-title">Desativação do curso</p>
-            <input class="edit-module__form-input-small" type="text" />
-          </span>
-        </div>
         <SuccessButton class="edit-module__form-button" :label="'Criar'" />
       </div>
     </div>
