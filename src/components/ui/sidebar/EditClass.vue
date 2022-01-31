@@ -22,25 +22,10 @@
         </span>
       </div>
       <div class="edit-class__form">
-        <span class="edit-class__form">
-          <img src="../../../assets/icons/input-image.svg" alt="close icon" />
-        </span>
         <p class="edit-class__form-input-title">Nome</p>
         <input class="edit-class__form-input-medium" type="text" />
-        <p class="edit-class__form-input-title">Descrição</p>
+        <p class="edit-class__form-input-title">Conteúdo</p>
         <input class="edit-class__form-input-big" type="text" />
-        <p class="edit-class__form-input-title">Carga Horária</p>
-        <input class="edit-class__form-input-medium" type="text" />
-        <div class="edit-class__form-small">
-          <span>
-            <p class="edit-class__form-input-title">Ativação do curso</p>
-            <input class="edit-class__form-input-small" type="text" />
-          </span>
-          <span>
-            <p class="edit-class__form-input-title">Desativação do curso</p>
-            <input class="edit-class__form-input-small" type="text" />
-          </span>
-        </div>
         <SuccessButton class="edit-class__form-button" :label="'Criar'" />
       </div>
     </div>

@@ -16,25 +16,10 @@
         </span>
       </div>
       <div class="new-class__form">
-        <span class="new-class__form">
-          <img src="../../../assets/icons/input-image.svg" alt="close icon" />
-        </span>
         <p class="new-class__form-input-title">Nome</p>
         <input class="new-class__form-input-medium" type="text" />
-        <p class="new-class__form-input-title">Descrição</p>
+        <p class="new-class__form-input-title">Conteúdo</p>
         <input class="new-class__form-input-big" type="text" />
-        <p class="new-class__form-input-title">Carga Horária</p>
-        <input class="new-class__form-input-medium" type="text" />
-        <div class="new-class__form-small">
-          <span>
-            <p class="new-class__form-input-title">Ativação do curso</p>
-            <input class="new-class__form-input-small" type="text" />
-          </span>
-          <span>
-            <p class="new-class__form-input-title">Desativação do curso</p>
-            <input class="new-class__form-input-small" type="text" />
-          </span>
-        </div>
         <SuccessButton class="new-class__form-button" :label="'Criar'" />
       </div>
     </div>
@@ -131,7 +116,7 @@ export default {
     line-height: 25px;
     color: #000000;
   }
-  &__form-button{
+  &__form-button {
     display: flex;
     align-self: flex-end;
   }
