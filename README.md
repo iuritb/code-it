@@ -8,8 +8,6 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
 
-![Teste](https://user-images.githubusercontent.com/51058820/131279304-068aceb1-fc37-453c-ace8-ecb277383220.png)
-
 
 ## 💻 Pré-requisitos
 
