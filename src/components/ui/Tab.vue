@@ -1,10 +1,22 @@
 <template>
   <div class="tab">
     <div class="tab_button">
-      <button class="tab__button-module" @click="toggle('Modules')">
+      <button
+        :class="[
+          'tab__button-module',
+          { active: currentComponent === 'Modules' },
+        ]"
+        @click="toggle('Modules')"
+      >
         Módulos
       </button>
-      <button class="tab__button-class" @click="toggle('Classes')">
+      <button
+        :class="[
+          'tab__button-class',
+          { active: currentComponent === 'Classes' },
+        ]"
+        @click="toggle('Classes')"
+      >
         Aulas
       </button>
       <div class="tab__divider"></div>
@@ -13,11 +25,16 @@
 </template>
 
 <script>
-
 export default {
+  data() {
+    return {
+      currentComponent: "Modules",
+    };
+  },
   methods: {
     toggle(component) {
-      this.$emit('emit-current-component', component)
+      this.currentComponent = component;
+      this.$emit("emit-current-component", component);
     },
   },
 };
@@ -26,8 +43,6 @@ export default {
 <style lang="scss" scoped>
 .tab {
   display: flex;
-  align-items: start;
-  justify-content: start;
   &__button {
     display: flex;
     flex-direction: row;
@@ -35,7 +50,7 @@ export default {
     justify-content: start;
   }
   &__button-module {
-    background: #1dbad3;
+    background: #dee2e6;
     width: 200px;
     height: 40px;
     border: none;
@@ -57,5 +72,8 @@ export default {
     width: 58.25rem;
     height: 2px;
   }
+}
+.active {
+  background: #1dbad3;
 }
 </style>
