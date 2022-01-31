@@ -2,14 +2,18 @@
   <div class="course">
     <div class="course__content">
       <p class="course__content-p">Seus treinamentos</p>
-      <NewCourse />
+
+      <NewCourse @newCourse="newCourse" />
       <template v-for="(course, index) in courses" :key="index">
         <CardCourse
+          @deleteCourse="deleteCourse"
+          @editCourse="editCourse"
           class="course__content-card"
           :courseId="course.courseId"
           :logo="course.logo"
           :title="course.title"
           :description="course.description"
+          :duration="course.duration"
           :isActive="course.isActive"
         />
       </template>
@@ -29,9 +33,20 @@ export default {
   },
   data() {
     return {
+      id: null,
+      cursoDelete: null,
+      cursoEdit: null,
+      curso: {
+        courseId: "",
+        description: "",
+        duration: "",
+        isActive: null,
+        logo: "svelte-logo.svg",
+        title: " ",
+      },
       courses: [
         {
-          courseId: "001",
+          courseId: 1,
           title: "Curso de Svelte",
           description: "Um curso para introdução ao Svelte com ...",
           logo: "svelte-logo.svg",
@@ -39,7 +54,7 @@ export default {
           isActive: true,
         },
         {
-          courseId: "002",
+          courseId: 2,
           title: "Curso de React",
           description: "Como Criar aplicativos utilizando React ...",
           logo: "react-logo.svg",
@@ -48,6 +63,32 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    newCourse(curso) {
+      this.curso = curso;
+      this.courses.push(this.curso);
+    },
+    editCourse(curso) {
+      this.cursoEdit = this.courses.findIndex(
+        (obj) => obj.courseId == curso.courseId
+      );
+
+      this.courses[this.cursoEdit].title = curso.title;
+      this.courses[this.cursoEdit].description = curso.description;
+      this.courses[this.cursoEdit].duration = curso.duration;
+      // console.log("After update: ", this.courses[this.cursoEdit]);
+    },
+    deleteCourse(id) {
+      function isCourse(course) {
+        return course.courseId === id;
+      }
+      this.cursoDelete = this.courses.find(isCourse);
+      this.courses.splice(this.courses.indexOf(this.cursoDelete), 1);
+    },
+    toggle() {
+      this.open = !this.open;
+    },
   },
 };
 </script>

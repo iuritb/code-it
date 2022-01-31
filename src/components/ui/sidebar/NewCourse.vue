@@ -20,11 +20,23 @@
           <img src="../../../assets/icons/input-image.svg" alt="close icon" />
         </span>
         <p class="new-course__form-input-title">Nome</p>
-        <input class="new-course__form-input-medium" type="text" />
+        <input
+          v-model="curso.title"
+          class="new-course__form-input-medium"
+          type="text"
+        />
         <p class="new-course__form-input-title">Descrição</p>
-        <input class="new-course__form-input-big" type="text" />
+        <input
+          v-model="curso.description"
+          class="new-course__form-input-big"
+          type="text"
+        />
         <p class="new-course__form-input-title">Carga Horária</p>
-        <input class="new-course__form-input-medium" type="text" />
+        <input
+          v-model="curso.duration"
+          class="new-course__form-input-medium"
+          type="text"
+        />
         <div class="new-course__form-small">
           <span>
             <p class="new-course__form-input-title">Ativação do curso</p>
@@ -35,7 +47,11 @@
             <input class="new-course__form-input-small" type="text" />
           </span>
         </div>
-        <SuccessButton class="new-course__form-button" :label="'Criar'" />
+        <SuccessButton
+          @click="save"
+          class="new-course__form-button"
+          :label="'Criar'"
+        />
       </div>
     </div>
   </div>
@@ -54,10 +70,24 @@ export default {
   data() {
     return {
       open: false,
+      curso: {
+        courseId: null,
+        title: "",
+        description: "",
+        duration: "",
+        isActive: true,
+        logo: "svelte-logo.svg",
+      },
     };
   },
 
   methods: {
+    save() {
+      this.curso.courseId = Math.floor(Math.random() * 1000);
+      this.$emit("newCourse", this.curso);
+      this.open = false;
+    },
+
     toggle() {
       this.open = !this.open;
     },
@@ -131,7 +161,7 @@ export default {
     line-height: 25px;
     color: #000000;
   }
-  &__form-button{
+  &__form-button {
     display: flex;
     align-self: flex-end;
   }
@@ -153,5 +183,3 @@ export default {
   right: 0;
 }
 </style>
-
-

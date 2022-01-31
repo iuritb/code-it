@@ -6,9 +6,9 @@
         <span
           @click="redirect(`/course/${courseId}`)"
           class="course-card__text-title"
-          >
+        >
           {{ title }}
-          </span>
+        </span>
         <span class="course-card__text-description">{{ description }}</span>
       </div>
     </div>
@@ -29,6 +29,8 @@
             :title="title"
             :description="description"
             :isActive="isActive"
+            :duration="duration"
+            @editCourse="editCourse"
           />
         </span>
         <span class="course-card__action-delete">
@@ -48,14 +50,19 @@
 import IsActive from "../tags/IsActive.vue";
 import IsInactive from "../tags/IsInactive.vue";
 import EditCourse from "../sidebar/EditCourse.vue";
+import NewModuleVue from "../sidebar/NewModule.vue";
 
 export default {
   components: { IsActive, IsInactive, EditCourse },
   props: {
     courseId: {
-      type: String,
+      type: Number,
     },
     logo: {
+      type: String,
+      default: "Não informado",
+    },
+    duration: {
       type: String,
       default: "Não informado",
     },
@@ -83,10 +90,10 @@ export default {
       this.$router.push(`${path}`);
     },
     editCourse(item) {
-      console.log("edit course", item);
+      this.$emit("editCourse", item);
     },
     deleteCourse(item) {
-      console.log("delete course", item);
+      this.$emit("deleteCourse", item);
     },
   },
 };

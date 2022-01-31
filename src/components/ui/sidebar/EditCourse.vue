@@ -26,11 +26,23 @@
           <img src="../../../assets/icons/input-image.svg" alt="close icon" />
         </span>
         <p class="edit-course__form-input-title">Nome</p>
-        <input class="edit-course__form-input-medium" type="text" />
+        <input
+          v-model="curso.title"
+          class="edit-course__form-input-medium"
+          type="text"
+        />
         <p class="edit-course__form-input-title">Descrição</p>
-        <input class="edit-course__form-input-big" type="text" />
+        <input
+          v-model="curso.description"
+          class="edit-course__form-input-big"
+          type="text"
+        />
         <p class="edit-course__form-input-title">Carga Horária</p>
-        <input class="edit-course__form-input-medium" type="text" />
+        <input
+          v-model="curso.duration"
+          class="edit-course__form-input-medium"
+          type="text"
+        />
         <div class="edit-course__form-small">
           <span>
             <p class="edit-course__form-input-title">Ativação do curso</p>
@@ -42,7 +54,7 @@
           </span>
         </div>
         <div class="edit-course__form-buttons">
-          <SuccessButton :label="'Criar'" />
+          <SuccessButton @click="save" :label="'Criar'" />
           <DangerButton :label="'Desabilitar'" />
         </div>
       </div>
@@ -70,6 +82,10 @@ export default {
       type: String,
       default: "Não informado",
     },
+    duration: {
+      type: String,
+      default: "Não informado",
+    },
     title: {
       type: String,
       default: "Não informado",
@@ -86,11 +102,28 @@ export default {
   data() {
     return {
       open: false,
+      curso: {
+        courseId: null,
+        title: "",
+        description: "",
+        duration: "",
+        isActive: true,
+        logo: "svelte-logo.svg",
+      },
     };
   },
-
   methods: {
     toggle() {
+      this.open = !this.open;
+      this.curso.title = this.title;
+      this.curso.description = this.description;
+      this.curso.duration = this.duration;
+      this.curso.courseId = this.courseId;
+      this.curso.isActive = this.isActive;
+      this.curso.logo = this.logo;
+    },
+    save() {
+      this.$emit("editCourse", this.curso);
       this.open = !this.open;
     },
   },
@@ -165,7 +198,7 @@ export default {
     color: #000000;
   }
   &__form-buttons {
-   display: flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
