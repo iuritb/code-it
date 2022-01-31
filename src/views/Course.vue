@@ -47,7 +47,7 @@ export default {
         courseId: "001",
         title: "Curso de Svelte",
         description: "Um curso para introdução ao Svelte com ...",
-        logo: "svelte-logo.svg",
+        logo: "svelte-logo-1.svg",
         duration: "20h",
         isActive: true,
       },
