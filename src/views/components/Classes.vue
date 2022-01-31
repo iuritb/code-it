@@ -15,6 +15,30 @@
               alt="chevron-right icon"
             />
           </span>
+          <div
+            v-for="(classes, index) in item.classes"
+            :key="index"
+            class="classes__togle-list"
+          >
+            <span>
+              <img
+                @click="toggle"
+                src="../../assets/icons/simple-book.svg"
+                alt="chevron-right icon"
+              />
+            </span>
+            <span>
+              {{ classes.title }}
+            </span>
+            <EditClass />
+            <span>
+              <img
+                @click="toggle"
+                src="../../assets/icons/trash.svg"
+                alt="chevron-right icon"
+              />
+            </span>
+          </div>
         </template>
         <template v-else>
           <span>
@@ -25,26 +49,28 @@
             />
           </span>
         </template>
-        <div class="classes__togle-list"></div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import EditClass from "../../components/ui/sidebar/EditClass.vue";
+
 export default {
+  components: { EditClass },
   props: ["modules"],
   data() {
     return {
-      isOpened: true
-    }
+      isOpened: false,
+    };
   },
   methods: {
-    toggle(){
-      console.log(this.isOpened)
-      this.isOpened = !this.isOpened
-    }
-  }
+    toggle() {
+      this.isOpened = !this.isOpened;
+      console.log(this.isOpened);
+    },
+  },
 };
 </script>
 

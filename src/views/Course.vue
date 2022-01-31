@@ -108,6 +108,18 @@ export default {
               title: "Quarta aula",
               content: "Conteudo aula 4",
             },
+            {
+              title: "Quarta aula",
+              content: "Conteudo aula 4",
+            },
+            {
+              title: "Quarta aula",
+              content: "Conteudo aula 4",
+            },
+            {
+              title: "Quarta aula",
+              content: "Conteudo aula 4",
+            },
           ],
         },
         {
