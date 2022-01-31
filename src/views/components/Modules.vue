@@ -1,13 +1,14 @@
 <template>
   <div class="modules">
-    <h1>modulos component</h1>
-    <CardModule
-      :logo="course.logo"
-      :title="course.title"
-      :description="course.description"
-      :isActive="course.isActive"
-      :duration="course.duration"
-    />
+    <div v-for="(item, index) in modules" :key="index" class="modules__card">
+      <CardModule
+        :logo="item.logo"
+        :title="item.title"
+        :description="item.description"
+        :isActive="item.isActive"
+        :duration="item.duration"
+      />
+    </div>
   </div>
 </template>
 
@@ -15,6 +16,7 @@
 import CardModule from "../../components/ui/cards/CardModule.vue";
 export default {
   components: { CardModule },
+  props: ["modules"],
   data() {
     return {
       course: {
@@ -32,5 +34,12 @@ export default {
 
 <style lang="scss" scoped>
 .modules {
+  display: flex;
+  flex-wrap: wrap;
+  &__card {
+    flex-direction: row;
+    margin: 0.5rem;
+    align-items: center;
+  }
 }
 </style>
