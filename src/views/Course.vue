@@ -10,12 +10,6 @@
       </template>
     </div>
     <div>
-      <!-- <template v-if="currentComponent == 'Modules'">
-        <Modules />
-      </template>
-      <template v-else-if="currentComponent == 'Classes'">
-        <Classes />
-      </template> -->
       <div class="course__content">
         <component :modules="modules" :is="currentComponent" />
         <DescriptionCard
@@ -61,11 +55,12 @@ export default {
       },
       modules: [
         {
+          moduleId: 1,
           logo: "svelte-logo-2.svg",
           title: "Introdução",
           description: "Introdução ao Svelte",
           isActive: true,
-          duration: "4 aulas",
+          duration: "10",
           classes: [
             {
               title: "Primeira aula",
@@ -86,11 +81,12 @@ export default {
           ],
         },
         {
+          moduleId: 2,
           logo: "svelte-logo-2.svg",
           title: "Programação Funcional",
           description: "Biblioteca Ramda e conceito",
           isActive: true,
-          duration: "4 aulas",
+          duration: "5",
           classes: [
             {
               title: "Primeira aula",
@@ -123,11 +119,12 @@ export default {
           ],
         },
         {
+          moduleId: 3,
           logo: "svelte-logo-2.svg",
           title: "Rx.Js",
           description: "Aprendendo sobre RX.Js",
           isActive: false,
-          duration: "4 aulas",
+          duration: "8",
           classes: [
             {
               title: "Primeira aula",
@@ -148,11 +145,12 @@ export default {
           ],
         },
         {
+          moduleId: 4,
           logo: "svelte-logo-2.svg",
           title: "Finalização",
           description: "Finalizando o WebApp",
           isActive: true,
-          duration: "4 aulas",
+          duration: "8",
           classes: [
             {
               title: "Primeira aula",

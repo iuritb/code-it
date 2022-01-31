@@ -30,11 +30,6 @@
             :description="description"
             :isActive="isActive"
           />
-          <!-- <img
-            @click="editCourse(courseId)"
-            src="../../../assets/icons/pencil-square.svg"
-            alt="chevron-right icon"
-          /> -->
         </span>
         <span class="course-card__action-delete">
           <img

@@ -1,7 +1,8 @@
 <template>
   <div class="edit-class">
-    <span class="course-card__action-edit">
+    <span>
       <img
+        class="edit-class__action-edit"
         @click="toggle"
         src="../../../assets/icons/pencil-square.svg"
         alt="chevron-right icon"
@@ -67,6 +68,9 @@ export default {
   &__header-icon {
     cursor: pointer;
   }
+  &__action-edit {
+    cursor: pointer;
+  }
   &__header-title {
     color: #000000;
     font-weight: 600;
@@ -122,7 +126,7 @@ export default {
     line-height: 25px;
     color: #000000;
   }
-  &__form-button{
+  &__form-button {
     display: flex;
     align-self: flex-end;
   }

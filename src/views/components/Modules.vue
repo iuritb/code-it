@@ -2,11 +2,13 @@
   <div class="modules">
     <div v-for="(item, index) in modules" :key="index" class="modules__card">
       <CardModule
+        :index="index + 1"
         :logo="item.logo"
         :title="item.title"
         :description="item.description"
         :isActive="item.isActive"
         :duration="item.duration"
+        :moduleId="item.moduleId"
       />
     </div>
   </div>

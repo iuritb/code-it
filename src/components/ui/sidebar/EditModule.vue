@@ -1,6 +1,6 @@
 <template>
   <div class="edit-module">
-    <span class="course-card__action-edit">
+    <span class="edit-module__action-edit">
       <img
         @click="toggle"
         src="../../../assets/icons/pencil-square.svg"
@@ -68,6 +68,9 @@ export default {
     align-items: center;
   }
   &__header-icon {
+    cursor: pointer;
+  }
+  &__action-edit {
     cursor: pointer;
   }
   &__header-title {
