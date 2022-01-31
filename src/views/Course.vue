@@ -63,18 +63,22 @@ export default {
           duration: "10",
           classes: [
             {
+              classId: 1,
               title: "Primeira aula",
               content: "Conteudo aula 1",
             },
             {
+              classId: 2,
               title: "Segunda Aula",
               content: "Conteudo aula 2",
             },
             {
+              classId: 3,
               title: "Terceira aula",
               content: "Conteudo aula 3",
             },
             {
+              classId: 4,
               title: "Quarta aula",
               content: "Conteudo aula 4",
             },
@@ -89,30 +93,37 @@ export default {
           duration: "5",
           classes: [
             {
+              classId: 5,
               title: "Primeira aula",
               content: "Conteudo aula 1",
             },
             {
+              classId: 6,
               title: "Segunda Aula",
               content: "Conteudo aula 2",
             },
             {
+              classId: 6,
               title: "Terceira aula",
               content: "Conteudo aula 3",
             },
             {
+              classId: 8,
               title: "Quarta aula",
               content: "Conteudo aula 4",
             },
             {
+              classId: 9,
               title: "Quarta aula",
               content: "Conteudo aula 4",
             },
             {
+              classId: 10,
               title: "Quarta aula",
               content: "Conteudo aula 4",
             },
             {
+              classId: 11,
               title: "Quarta aula",
               content: "Conteudo aula 4",
             },
@@ -127,18 +138,22 @@ export default {
           duration: "8",
           classes: [
             {
+              classId: 12,
               title: "Primeira aula",
               content: "Conteudo aula 1",
             },
             {
+              classId: 13,
               title: "Segunda Aula",
               content: "Conteudo aula 2",
             },
             {
+              classId: 14,
               title: "Terceira aula",
               content: "Conteudo aula 3",
             },
             {
+              classId: 15,
               title: "Quarta aula",
               content: "Conteudo aula 4",
             },
@@ -153,18 +168,22 @@ export default {
           duration: "8",
           classes: [
             {
+              classId: 16,
               title: "Primeira aula",
               content: "Conteudo aula 1",
             },
             {
+              classId: 17,
               title: "Segunda Aula",
               content: "Conteudo aula 2",
             },
             {
+              classId: 18,
               title: "Terceira aula",
               content: "Conteudo aula 3",
             },
             {
+              classId: 19,
               title: "Quarta aula",
               content: "Conteudo aula 4",
             },

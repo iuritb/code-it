@@ -10,6 +10,7 @@
         <template v-if="isOpened">
           <span>
             <img
+              class="icon"
               @click="toggle"
               src="../../assets/icons/double-chevron-up.svg"
               alt="chevron-right icon"
@@ -33,7 +34,8 @@
             <EditClass />
             <span>
               <img
-                @click="toggle"
+                class="icon"
+                @click="deleteClass(classes.classId)"
                 src="../../assets/icons/trash.svg"
                 alt="chevron-right icon"
               />
@@ -43,6 +45,7 @@
         <template v-else>
           <span>
             <img
+              class="icon"
               @click="toggle"
               src="../../assets/icons/double-chevron-down.svg"
               alt="chevron-right icon"
@@ -70,11 +73,17 @@ export default {
       this.isOpened = !this.isOpened;
       console.log(this.isOpened);
     },
+    deleteClass(classId) {
+      console.log("delete class: ", classId);
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .classes {
+}
+.icon {
+  cursor: pointer;
 }
 </style>
