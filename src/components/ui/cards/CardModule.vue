@@ -123,5 +123,9 @@ export default {
   &__action-icon {
     cursor: pointer;
   }
+  &__header:hover {
+    color: #1dbad3;
+    cursor: pointer;
+  }
 }
 </style>
