@@ -6,52 +6,9 @@
         v-for="(item, index) in modules"
         :key="index"
       >
-        <span>{{ index + 1 }}.{{ item.title }}</span>
-        <template v-if="isOpened">
-          <span>
-            <img
-              class="icon"
-              @click="toggle"
-              src="../../assets/icons/double-chevron-up.svg"
-              alt="chevron-right icon"
-            />
-          </span>
-          <div
-            v-for="(classes, index) in item.classes"
-            :key="index"
-            class="classes__togle-list"
-          >
-            <span>
-              <img
-                @click="toggle"
-                src="../../assets/icons/simple-book.svg"
-                alt="chevron-right icon"
-              />
-            </span>
-            <span>
-              {{ classes.title }}
-            </span>
-            <EditClass />
-            <span>
-              <img
-                class="icon"
-                @click="deleteClass(classes.classId)"
-                src="../../assets/icons/trash.svg"
-                alt="chevron-right icon"
-              />
-            </span>
-          </div>
-        </template>
-        <template v-else>
-          <span>
-            <img
-              class="icon"
-              @click="toggle"
-              src="../../assets/icons/double-chevron-down.svg"
-              alt="chevron-right icon"
-            />
-          </span>
-        </template>
+        <div>
+          <CollapseClass :item="item" :index="index" />
+        </div>
       </div>
     </div>
   </div>
@@ -59,20 +16,21 @@
 
 <script>
 import EditClass from "../../components/ui/sidebar/EditClass.vue";
+import CollapseClass from "../../components/ui/collapse/CollapseClasses.vue";
 
 export default {
-  components: { EditClass },
+  components: { EditClass, CollapseClass },
   props: ["modules"],
   data() {
     return {
       isOpened: false,
+      module: null,
     };
   },
+  mounted() {
+    this.module = this.modules;
+  },
   methods: {
-    toggle() {
-      this.isOpened = !this.isOpened;
-      console.log(this.isOpened);
-    },
     deleteClass(classId) {
       console.log("delete class: ", classId);
     },
