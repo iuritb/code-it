@@ -1,4 +1,55 @@
-*{
+* {
   margin: 0;
   padding: 0;
+}
+
+/* Color Theme Swatches in Hex */
+.FALLING-BEAUTY-1-hex {
+  color: #021826;
+}
+.FALLING-BEAUTY-2-hex {
+  color: #0a3140;
+}
+.FALLING-BEAUTY-3-hex {
+  color: #245c73;
+}
+.FALLING-BEAUTY-4-hex {
+  color: #4b8ca6;
+}
+.FALLING-BEAUTY-5-hex {
+  color: #91c4d9;
+}
+
+/* Color Theme Swatches in RGBA */
+.FALLING-BEAUTY-1-rgba {
+  color: rgba(2, 24, 38, 1);
+}
+.FALLING-BEAUTY-2-rgba {
+  color: rgba(10, 48, 63, 1);
+}
+.FALLING-BEAUTY-3-rgba {
+  color: rgba(35, 92, 114, 1);
+}
+.FALLING-BEAUTY-4-rgba {
+  color: rgba(74, 139, 165, 1);
+}
+.FALLING-BEAUTY-5-rgba {
+  color: rgba(145, 196, 216, 1);
+}
+
+/* Color Theme Swatches in HSLA */
+.FALLING-BEAUTY-1-hsla {
+  color: hsla(202, 88, 7, 1);
+}
+.FALLING-BEAUTY-2-hsla {
+  color: hsla(196, 72, 14, 1);
+}
+.FALLING-BEAUTY-3-hsla {
+  color: hsla(196, 52, 29, 1);
+}
+.FALLING-BEAUTY-4-hsla {
+  color: hsla(196, 37, 47, 1);
+}
+.FALLING-BEAUTY-5-hsla {
+  color: hsla(196, 48, 70, 1);
 }

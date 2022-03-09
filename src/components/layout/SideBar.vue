@@ -20,7 +20,7 @@ export default {};
 
 <style lang="scss" scoped>
 .sidebar {
-  background-color: #222e44;
+  background-color: #021826;
   width: 6.25rem;
   display: flex;
   flex-direction: column;

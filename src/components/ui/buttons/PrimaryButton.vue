@@ -13,7 +13,7 @@ export default {
 <style lang="scss" scoped>
 .primary-button {
   padding: 0.5rem 5rem 0.5rem 5rem;
-  background-color: #1dbad3;
+  background-color: #245C73;
   color: #fff;
   font-size: 18px;
   font-weight: 400;

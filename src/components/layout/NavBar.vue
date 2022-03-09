@@ -14,7 +14,7 @@
 
 <style lang="scss" scoped>
 .nav {
-  background-color: #2e3c56;
+  background-color: #0A3140;
   display: flex;
   justify-content: flex-end;
   align-items: center;

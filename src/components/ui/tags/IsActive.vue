@@ -12,7 +12,7 @@ export default {
 
 <style lang="scss" scoped>
 .success-tag {
-  background: #86c51f;
+  background: #4B8CA6;
   padding: 5px;
   width: 120px;
   height: 25px;
